@@ -23,6 +23,8 @@ jobs:
       with:
         source: "."
         target: "/home/webv3/public_html/cicd.chungpq.id.vn/"
+        port: 65333
+        debug: true
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
