@@ -19,7 +19,6 @@ jobs:
           cp .github/workflows/config ~/.ssh/config
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa 103.57.221.50 >> ~/.ssh/known_hosts
 
       - name: Test SSH connection
         run: ssh chung_panel hostname
