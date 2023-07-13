@@ -20,7 +20,7 @@ jobs:
         target: "/home/webv3/public_html/cicd.chungpq.id.vn/"
         debug: true
         host: "${{ secrets.HOST }}"
-        username: "${{ secrets.USER }}"
+        username: "${{ secrets.USERNAME }}"
         port: "${{ secrets.PORT }}"
         key: "${{ secrets.SSH_PRIVATE_KEY }}"
 
@@ -28,7 +28,7 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: "${{ secrets.HOST }}"
-        username: "${{ secrets.USER }}"
+        username: "${{ secrets.USERNAME }}"
         port: "${{ secrets.PORT }}"
         key: "${{ secrets.SSH_PRIVATE_KEY }}"
         script: ls
