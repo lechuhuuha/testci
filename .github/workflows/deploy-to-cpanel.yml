@@ -19,10 +19,10 @@ jobs:
         source: "."
         target: "/home/webv3/public_html/cicd.chungpq.id.vn/"
         debug: true
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: ${{ secrets.SSH_PORT }}
+        host: "103.57.221.50"
+        username: "webv3"
+        key: "${{ secrets.SSH_PRIVATE_KEY }}"
+        port: "65333"
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
