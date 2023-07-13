@@ -16,10 +16,11 @@ jobs:
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
+          cp .github/workflows/ssh-config ~/.ssh/config
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
 
       - name: Push to cPanel Git
         run: |
-          git remote add cpanel ssh://webv3@103.57.221.50:65333/home/webv3/public_html/cicd.chungpq.id.vn
-          git push cpanel master  # Adjust to match your branch name and cPanel Git remote
+          git remote add cpanel git remote add testci chung_panel:/home/webv3/public_html/cicd.chungpq.id.vn
+          git push testci master

@@ -1,0 +1,5 @@
+Host chung_panel
+    IdentityFile "C:\Users\ADMIN\.ssh\chung_panel\id_rsa"
+    Hostname 103.57.221.50
+    User webv3
+    Port 65333
