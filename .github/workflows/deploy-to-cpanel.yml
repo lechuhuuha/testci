@@ -21,5 +21,5 @@ jobs:
 
       - name: Push to cPanel Git
         run: |
-          git remote add cpanel ssh://webv3@webv3.w2.myzozo.net:65333/home/webv3/public_html/cicd.chungpq.id.vn
+          git remote add cpanel ssh://webv3@103.57.221.50:65333/home/webv3/public_html/cicd.chungpq.id.vn
           git push cpanel master  # Adjust to match your branch name and cPanel Git remote
