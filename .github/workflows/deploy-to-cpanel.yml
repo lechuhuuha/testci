@@ -6,7 +6,7 @@ on:
       - master # Adjust to match your branch name
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     environment: main
     steps:
