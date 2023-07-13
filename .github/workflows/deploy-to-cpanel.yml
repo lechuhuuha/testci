@@ -1,0 +1,26 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches:
+      - master  # Adjust to match your branch name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 103.57.221.50 >> ~/.ssh/known_hosts
+
+      - name: Push to cPanel Git
+        run: |
+          git remote add cpanel ssh://webv3@webv3.w2.myzozo.net:65333/home/webv3/public_html/cicd.chungpq.id.vn
+          git push cpanel master  # Adjust to match your branch name and cPanel Git remote
