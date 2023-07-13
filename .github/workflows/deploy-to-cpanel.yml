@@ -23,7 +23,6 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
-        target: ${{ secrets.PATH }}
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
